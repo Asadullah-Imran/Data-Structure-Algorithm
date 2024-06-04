@@ -9,8 +9,5 @@ namespace second{
 
 int main(){
   int x=0;
-  std::cout<<first::y<<std::endl;
-  std::cout<<x;
-  using namespace std;
-  cout<<x;
+  std::cout<<"hello"<<std::endl;
 }
