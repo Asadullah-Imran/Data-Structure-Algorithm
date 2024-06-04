@@ -2,19 +2,19 @@
 
 
 
-void reverseArrayExtraArray(int arr[], int size)
-{
-    int reversedArr[size];
-    for (int i = 0; i < size; i++) {
-        reversedArr[i] = arr[size - i - 1];
-    }
+// void reverseArrayExtraArray(int arr[], int size)
+// {
+//     int reversedArr[size];
+//     for (int i = 0; i < size; i++) {
+//         reversedArr[i] = arr[size - i - 1];
+//     }
 
-    // Print reversed array
-    std::cout << "Reversed Array: ";
-    for (int i = 0; i < size; i++) {
-        std::cout << reversedArr[i] << " ";
-    }
-}
+//     // Print reversed array
+//     std::cout << "Reversed Array: ";
+//     for (int i = 0; i < size; i++) {
+//         std::cout << reversedArr[i] << " ";
+//     }
+// }
 
 
 void reverseArray(int arr[], int start, int end)
@@ -36,15 +36,15 @@ bool checkSort( int arr[],int n,int & first,int & last){
     last=1;
     for (int i=0; i<n-1;i++){
         if(arr[i+1]>arr[i]){
-            std::cout<<"ok"<<std::endl;
+            // std::cout<<"ok"<<std::endl;
         }else{
-            std::cout<<"not okay"<<std::endl;
+            // std::cout<<"not okay"<<std::endl;
             first=i+1;
             
             if(state==0){
 
                 while(arr[i]>arr[i+1]){
-                    std::cout<<"check while decending"<<std::endl;
+                    // std::cout<<"check while decending"<<std::endl;
                 //go loop
                 i++;
             }
@@ -62,9 +62,9 @@ bool checkSort( int arr[],int n,int & first,int & last){
 
     reverseArray(arr,first-1,last-1);
 
-        for(int i=0;i<n;i++){
-        std::cout<<arr[i]<<std::endl;
-    }
+    //     for(int i=0;i<n;i++){
+    //     std::cout<<arr[i]<<std::endl;
+    // }
     
     
 // int tempArr[last-first+1];
@@ -81,7 +81,7 @@ bool checkSort( int arr[],int n,int & first,int & last){
         int subState=0;
         for (int i=0; i<n-1;i++){
             if(arr[i+1]>arr[i]){
-                std::cout<<"ok"<<std::endl;
+                // std::cout<<"ok"<<std::endl;
                 
             }else{
 
@@ -114,9 +114,9 @@ int main(){
     // for(int i=0;i<n;i++){
     //     std::cout<<arr[i]<<std::endl;
     // }
- std::cout<<"  "<<std::endl;
-        std::cout<< ""<<std::endl;
-        std::cout<<""<<std::endl;
+//  std::cout<<"  "<<std::endl;
+//         std::cout<< ""<<std::endl;
+//         std::cout<<""<<std::endl;
 
 
 
