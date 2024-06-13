@@ -1,105 +1,97 @@
 #include <iostream>
 
-bool isIncreasing(int arr[], int n, int &index) {
+// bool isIncreasing(int arr[], int n, int &index) {
+//     for (int i = 0; i < n - 1; i++) {
+//         if (arr[i] > arr[i + 1]) {
+//             index = i;
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+bool isIncreasing(int arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
         if (arr[i] > arr[i + 1]) {
-            index = i;
             return false;
         }
     }
     return true;
 }
-
-bool isDecreasing(int arr[], int n, int &index) {
-    for (int i = index; i < n - 1; i++) {
-        if (arr[i] < arr[i + 1]) {
-            index = i;
-            return false;
+bool isOk(int arr[], int n) {
+int breakpoint=0;
+    for (int i = 0; i < n - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+           breakpoint++;
         }
     }
-    return true;
-}
-
-void splitAndConcat(int arr[], int n, int prevIndex, int index) {
-    int size1 = prevIndex + 1; // Include the element at prevIndex
-    int size2 = index - prevIndex;
-
-    int temp[size1];
-    for (int i = 0; i < size1; i++) {
-        temp[i] = arr[i];
-    }
-
-    for (int i = 0; i < n - size1; i++) {
-        arr[i] = arr[i + size1];
-    }
-
-    for (int i = 0; i < size1; i++) {
-        arr[n - size1 + i] = temp[i];
-    }
-
-    std::cout << "Array after first split and concat: ";
-    for (int i = 0; i < n; i++) {
-        std::cout << arr[i] << " ";
-    }
-    std::cout << std::endl;
-
-    // int temp2[size2];
-    // for (int i = 0; i < size2; i++) {
-    //     temp2[i] = arr[i];
-    // }
-
-    // for (int i = 0; i < n - size2; i++) {
-    //     arr[i] = arr[i + size2];
-    // }
-
-    // for (int i = 0; i < size2; i++) {
-    //     arr[n - size2 + i] = temp2[i];
-    // }
-}
-
-bool isBazokaAndMocha(int arr[], int n) {
-    int index = 0;
-    int prevIndex;
-    if (isIncreasing(arr, n, index)) {
-        // It is a fully increasing array
-        std::cout << "Already increasing array" << std::endl;
+     if (breakpoint == 0) {
+        // Array is already sorted
         return true;
-    } else {
-        // It is not a fully increasing array
-        // At `index` it starts decreasing
-        std::cout << "Decreasing array starts at index " << index << std::endl;
-        prevIndex = index;
-        // Now check how much portion is decreasing
-        if (isDecreasing(arr, n, index)) {
-            // All are decreasing
-            std::cout << "All elements are decreasing" << std::endl;
-        } else {
-            std::cout << "Decreasing array ends at index " << index << std::endl;
-            // Now split and concat
-            splitAndConcat(arr, n, prevIndex, index);
-            std::cout << "Split and concat completed" << std::endl;
-            for (int i = 0; i < n; i++) {
-                std::cout << arr[i] << " ";
-            }
-            std::cout << std::endl;
-            if (isIncreasing(arr, n, index)) {
-                return true;
-            }
-        }
+    }
+    if(breakpoint==1){
+        return arr[n-1]<=arr[0];
     }
     return false;
+    
 }
+// void decreasingAndConcat(int arr[],int n,int decreasingIndex){
+//     int decSize=decreasingIndex+1;
+//     int decArr[decSize];
+//     //just load the shifting part
+//     for(int i=0; i<decSize;i++){
+//         decArr[i]=arr[i];
+//     }
+//     for(int i=0;i<n;i++){
+//         if(i<n-decSize){
+//             arr[i]=arr[i+decSize];
+//         } else{
+//             arr[i]=decArr[i-(n-decSize)];
+//         }
+//     }
+// }
+
+// bool isBazokaAndMocha(int arr[],int n){
+// int decreasingIndex=-1;
+// if(isIncreasing(arr,n,decreasingIndex)){
+//     return true;
+// }else{
+//     //std::cout<<"Decreasign index is "<<decreasingIndex<<std::endl;
+
+//     //Now i want to split the part start to decreasing index and concat to its end
+
+//     decreasingAndConcat(arr,n,decreasingIndex);
+//     // for(int i=0; i<n;i++){
+//     //     std::cout<<arr[i]<< " ";
+//     // }
+//     if(isIncreasing(arr,n,decreasingIndex)){
+//         return true;
+//     }else{
+//         return false;
+//     }
+
+// }
+//     return false;
+
+// }
+
+
 
 int main() {
-    int n;
-    std::cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++) {
-        std::cin >> arr[i];
+    int t;
+    std::cin >> t;
+    while(t--){
+        int n;
+        std::cin >> n;
+        int arr[n];
+        for (int i = 0; i < n; i++) {
+            std::cin >> arr[i];
+        }
+        if (isIncreasing(arr,n)||isOk(arr,n)) {
+            std::cout <<"Yes";
+        } else {
+            std::cout << "No";
+        }
     }
-    if (isBazokaAndMocha(arr, n)) {
-        std::cout << "YES";
-    } else {
-        std::cout << "NO";
-    }
+   
 }
