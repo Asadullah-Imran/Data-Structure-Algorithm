@@ -35,47 +35,6 @@ int breakpoint=0;
     return false;
     
 }
-// void decreasingAndConcat(int arr[],int n,int decreasingIndex){
-//     int decSize=decreasingIndex+1;
-//     int decArr[decSize];
-//     //just load the shifting part
-//     for(int i=0; i<decSize;i++){
-//         decArr[i]=arr[i];
-//     }
-//     for(int i=0;i<n;i++){
-//         if(i<n-decSize){
-//             arr[i]=arr[i+decSize];
-//         } else{
-//             arr[i]=decArr[i-(n-decSize)];
-//         }
-//     }
-// }
-
-// bool isBazokaAndMocha(int arr[],int n){
-// int decreasingIndex=-1;
-// if(isIncreasing(arr,n,decreasingIndex)){
-//     return true;
-// }else{
-//     //std::cout<<"Decreasign index is "<<decreasingIndex<<std::endl;
-
-//     //Now i want to split the part start to decreasing index and concat to its end
-
-//     decreasingAndConcat(arr,n,decreasingIndex);
-//     // for(int i=0; i<n;i++){
-//     //     std::cout<<arr[i]<< " ";
-//     // }
-//     if(isIncreasing(arr,n,decreasingIndex)){
-//         return true;
-//     }else{
-//         return false;
-//     }
-
-// }
-//     return false;
-
-// }
-
-
 
 int main() {
     int t;
@@ -88,9 +47,9 @@ int main() {
             std::cin >> arr[i];
         }
         if (isIncreasing(arr,n)||isOk(arr,n)) {
-            std::cout <<"Yes";
+            std::cout <<"Yes"<<std::endl;
         } else {
-            std::cout << "No";
+            std::cout << "No"<<std::endl;
         }
     }
    
