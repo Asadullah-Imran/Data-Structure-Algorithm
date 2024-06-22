@@ -2,7 +2,7 @@
 
 
 void selectionSort(int arr[], int n){
-    for(int i= 0;i<n;i++){
+    for(int i= 0;i<n-1;i++){
         int min = arr[i];
         int minIndex= i;
         for(int j=i+1;j<n;j++){
@@ -24,7 +24,7 @@ void selectionSort(int arr[], int n){
 int main(){
 
 // suppose the array is 
-int arr[]={5,9,2,7,1,5,6,2,3,4};
+int arr[]={5,9,2,7,1,5,6,2,3,4,1};
 int arrLength= sizeof(arr)/sizeof(arr[0]); //this is how you can find the size fo an array
 // std::cout<<"array size is "<<arrLength<<std::endl;
 
