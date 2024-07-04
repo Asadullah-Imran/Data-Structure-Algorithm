@@ -188,18 +188,19 @@ int main(){
     insertAt(90,1);
      
      deleteFirst();
+     deleteAt(2);
 
 
 
     // Print all elements of the linked list
     std::cout << "Linked List elements: ";
     printAllLinkedList();
-    int foundNUM= search(30);
-    if(foundNUM != (-1)){
-        std::cout<<"founded at index "<< foundNUM<<std::endl ;
-    }else{
-        std::cout<<"Do not matched "<<std::endl ;
-    }
+    // int foundNUM= search(30);
+    // if(foundNUM != (-1)){
+    //     std::cout<<"founded at index "<< foundNUM<<std::endl ;
+    // }else{
+    //     std::cout<<"Do not matched "<<std::endl ;
+    // }
 
 }
 
