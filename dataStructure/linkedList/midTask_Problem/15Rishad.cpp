@@ -73,9 +73,12 @@ void reverse(){
 
 
     // head=temp->next; //beca
-    
+    if(head!=NULL && tail!=NULL){
     std::cout<<"head is "<<head->data<<std::endl;
     std::cout<<"tail is "<<tail->data<<std::endl;
+
+    }
+    
 }
 
 
