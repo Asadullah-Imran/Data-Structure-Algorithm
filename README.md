@@ -1,16 +1,24 @@
 # Problem Solving Repository
 
 ## Folders:
-- [dataStructure](dataStructure)
+- [Data Structure](dataStructure)
 - [Searching](searching)
-- [sorting](sorting)
+- [Sorting](sorting)
 
 ### Inside dataStructure:
-- [midTask_problem](dataStructure/midTask_problem)
-  - [10Sumaiya.cpp](dataStructure/midTask_problem/10Sumaiya.cpp)
-  - [15Rishad.cpp](dataStructure/midTask_problem/15Rishad.cpp)
+- [LinkedList](dataStructure/linkedList)
+  - [Single Linked List](dataStructure/linkedList/linkedList.cpp)
+  - [doubly Linked List](dataStructure/linkedList/doublyLinkedList.cpp)
+  - [midTask_problem](dataStructure/linkedList/midTask_Problem)
+    - [10Sumaiya.cpp](dataStructure/linkedList/midTask_Problem/10Sumaiya.cpp)
+    - [15Rishad.cpp](dataStructure/linkedList/midTask_Problem/15Rishad.cpp)
 
-### Root Files:
-- [linkedList.cpp](dataStructure/linkedList.cpp)
-- [doublyLinkedList.cpp](dataStructure/linkedList/doublyLinkedList.cpp)
+### Inside Searching:
+- [Linear Search](searching/LinearSearch)
+- [Binary Search](searching/BinarySearch)
+
+### Inside Sorting:
+- [Selection Sort](sorting/selectionSort)
+- [Insertion Sort](sorting/insertionSort)
+
 
