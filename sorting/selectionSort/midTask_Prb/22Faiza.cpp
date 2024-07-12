@@ -21,98 +21,73 @@
 
 #include <iostream>
 
-// void sortA1ByA2(int a1[],int a2[],n,m){
-//     //selection sort
-//     for(int i=0;i<n-1;i++){
-//         int min=a1[i];
-//         int minIndex=a1[i];
+// Function to sort array a1 according to the order defined by array a2
+void sortA1ByA2(int a1[], int a2[], int n, int m) {
+    int index = 0; // Index to keep track of the position in a1
 
-//         //here we need to do some operation 
-//         for(int j=i+1;j<n;j++){
-//             if(min>a1[j]){
-//                 min=a1[j];
-//                 minIndex=j;
-//             }
-//         }
-
-
-//         //swap the value
-//         if(minIndex!=i){
-//             int temp= arr[i];
-//             arr[i]=min;
-//             arr[minIndex]=temp;
-//         }
-//     }
-// }
-
-void selectionSort2(int A1[], int N, int A2[], int M) {
-    // Traverse through all elements of A2
-    for (int i = 0; i < M; ++i) {
-        // Place all occurrences of A2[i] in the correct order in A1
-        for (int j = 0; j < N; ++j) {
-            if (A1[j] == A2[i]) {
-                // Swap to move A2[i] to the correct position
-                int temp = A1[i];
-                A1[i] = A1[j];
-                A1[j] = temp;
-                i++;
+    // Loop through each element in a2
+    for (int i = 0; i < m; i++) {
+        // Loop through the remaining elements in a1
+        for (int j = index; j < n; j++) {
+            // If the current element in a1 matches the current element in a2
+            if (a1[j] == a2[i]) {
+                // Swap the matching element with the element at the current index
+                int temp = a1[index];
+                a1[index] = a1[j];
+                a1[j] = temp;
+                index++; // Move the index forward
             }
         }
-        i--; // Adjust i because of the extra increment in the inner loop
     }
 
-    // Selection sort for remaining elements not in A2
-    // for (int i = M; i < N-1; i++) {
-    //     int minIndex = i;
-    //     for (int j = i+1; j < N; j++) {
-    //         if (A1[j] < A1[minIndex]) {
-    //             minIndex = j;
-    //         }
-    //     }
-    //     // Swap the found minimum element with the first element
-    //     int temp = A1[minIndex];
-    //     A1[minIndex] = A1[i];
-    //     A1[i] = temp;
-    // }
-}
-// Function to perform selection sort
-void selectionSort(int A1[], int N, int A2[], int M) {
-    // Traverse through all elements of A2
-    for (int i = 0; i < M; ++i) {
-        // Find the position of the element A2[i] in A1
-        int pos = -1;
-        for (int j = 0; j < N; ++j) {
-            if (A1[j] == A2[i]) {
-                pos = j;
-                break;
+    // Perform selection sort on the remaining elements in a1
+    for (int i = index; i < n - 1; i++) {
+        int min = a1[i];
+        int minIndex = i;
+        
+        // Find the minimum element in the remaining unsorted portion of the array
+        for (int j = i + 1; j < n; j++) {
+            if (min > a1[j]) {
+                min = a1[j]; // Update the minimum value
+                minIndex = j; // Update the index of the minimum value
             }
         }
 
-        // If A2[i] is found in A1, swap A1[i] and A1[pos]
-        if (pos != -1 && pos != i) {
-            // Swap elements in A1 to maintain order of A2
-            int temp = A1[i];
-            A1[i] = A1[pos];
-            A1[pos] = temp;
+        // Swap the found minimum element with the current element
+        if (minIndex != i) {
+            int temp = a1[i];
+            a1[i] = min;
+            a1[minIndex] = temp;
         }
     }
 }
 
-int main(){
-    int N = 11 ;
-    int  M = 4;
+int main() {
+    
+
+    // Define the arrays
     int A1[] = {2, 1, 2, 5, 7, 1, 9, 3, 6, 8, 8};
     int A2[] = {2, 1, 8, 3};
+    
+    // Define the size of the arrays
+    int N = sizeof(A1)/sizeof(A1[0]);
+    int M = sizeof(A2)/sizeof(A2[0]);
+    // Print the initial array
     std::cout << "Initial Array: ";
     for (int i = 0; i < N; i++) {
         std::cout << A1[i] << " ";
     }
-    std::cout << std::endl;    
-    selectionSort(A1,N,A2,M);
+    std::cout << std::endl;
+
+    // Sort array A1 according to the order defined by array A2
+    sortA1ByA2(A1, A2, N, M);
+
+    // Print the sorted array
     std::cout << "Sorted Array: ";
     for (int i = 0; i < N; i++) {
         std::cout << A1[i] << " ";
     }
-    std::cout << std::endl;  
+    std::cout << std::endl;
 
+    return 0;
 }
