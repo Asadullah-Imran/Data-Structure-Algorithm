@@ -19,6 +19,8 @@
 
 ### Inside Sorting:
 - [Selection Sort](sorting/selectionSort)
+  - [midTask_problem](sorting/selectionSort/midTask_Prb)
 - [Insertion Sort](sorting/insertionSort)
+  - [midTask_problem](sorting/insertionSort/midTask_prb)
 
 
