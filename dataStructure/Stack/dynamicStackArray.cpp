@@ -19,11 +19,16 @@ class Stack{
 
     void push(int x){
         if(isFull()){
-            cout<< "Stack is full"<< endl;
-        }else{
+           n+=2;
+           int *temp = new int [n];
+           for(int i=0;i<=top;i++){
+            temp[i]=arrPtr[i];
+           }
+           arrPtr=temp;
+        }
             top++;
             arrPtr[top]=x;
-        }
+        
     }
     int pop(){
         if(isEmpty()){
@@ -82,6 +87,7 @@ int main(){
     s1.push(3);
     s1.push(4);
     s1.push(5);
+    s1.push(6);
     s1.display();
 
     s2.push(3);
