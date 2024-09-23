@@ -8,7 +8,7 @@ int main() {
     while (t-- > 0) {
         int n;
         cin >> n;
-        int arr[n], sum = 0;
+        long long arr[n], sum = 0;
         for (int i = 0; i < n; i++) {
             cin >> arr[i];
             sum += arr[i];
@@ -38,9 +38,9 @@ int main() {
         if (unhappyPeople > n / 2) {
             cout << 0 << endl;
         } else {
-            int minWealth = arr[n / 2];
-            int p = minWealth * 2 * n;
-            int x = p - sum + 1; 
+            long long minWealth = arr[n / 2];
+            long long p = minWealth * 2LL * n;
+            long long x = p - sum + 1;
             cout << x << endl;
         }
     }

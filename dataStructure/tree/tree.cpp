@@ -88,6 +88,36 @@ class BinaryTree{
         }
     }
 
+    int getSmallestValue(){
+        TreeNode * tempNode=root;
+        while(tempNode->left==nullptr){
+            tempNode=tempNode->left;
+        }
+        int x=tempNode->data;
+        delete(tempNode);
+        return x;
+    }
+    int getBiggestValue(){
+        TreeNode * tempNode=root;
+        while(tempNode->right==nullptr){
+            tempNode=tempNode->right;
+        }
+        int x=tempNode->data;
+        delete(tempNode);
+        return x;
+    }
+
+    void deleteNode(int x){
+        TreeNode * tempNode= root;
+
+    }
+
+    void goLeft(){
+        
+    }
+
+    
+
 
 
     private:
@@ -156,6 +186,8 @@ class BinaryTree{
 
     }
 
+    
+
 };
 
 
@@ -204,6 +236,9 @@ int main(){
     cout<<"the minimum value of the tree is "<<b1.minNode()->data<<endl;
     cout<<"the maximum value of the tree is "<<b1.maxNode()->data<<endl;
     
+
+    cout<<"smallest value is -> "<<b1.getSmallestValue();
+    cout<<"Biggest value is -> "<<b1.getBiggestValue();
     
     
 }

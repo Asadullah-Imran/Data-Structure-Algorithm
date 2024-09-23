@@ -2,8 +2,6 @@
 
 using namespace std;
 
-
-
 class Graph{
     int nVertices;
     int **matrix;
@@ -41,10 +39,7 @@ class Graph{
             if(u<0||v<0|| u>=nVertices ||v>= nVertices ) return false;
              if(matrix[u][v]==1)return true;
              return false;
-        }
-            
-        
-
+        }        
         void displayGraph(){
             cout<<"Displaying Graph"<<endl;
             for(int i=0;i<nVertices;i++){
@@ -57,11 +52,6 @@ class Graph{
                 cout<<endl;
             }
         }
-    
-
-
-    
-
 };
 int main(){
         Graph g(5,false);
