@@ -1,1 +1,0 @@
-# (Bazoka and Mocha's Array)[https://codeforces.com/problemset/problem/1975/A?fbclid=IwZXh0bgNhZW0CMTAAAR2F1jnQHJs7PzmWJZGr4kWVODRrhDasWEliFIZuyvnZTIP-h2S2yLo7k4o_aem_ARFNZsSqPYaM_6_yUdRF_fqQqjp7vaqqfs88vfXvDBvWdksyNcKhxl7q9Bs6muhNC2AxypQGIFsw3a-c3IU6TBc_]
